@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClient} from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +17,21 @@ export class AppComponent {
   public stpost: Post[] = [];
   constructor(private _freeapiservice: freeApiService) {
 
+  }
+
+  onpost(a:string,b:string,c:string,e:number,f:number,d:string)
+  {
+    var productdata={
+      id:a,
+      name:b,
+      description:c,
+      price:e,
+      discount:f,
+      type:d
+    }
+    this._freeapiservice.getpost(productdata).subscribe(data => {
+      console.log("Posted id:"+productdata);
+    });
   }
 
   onclick1(b:string){

@@ -19,4 +19,7 @@ export class freeApiService {
     getdelete(a:string):Observable<Comment[]>{
         return this.httpclient.delete<Comment[]>("http://localhost:9143/api/products/"+a)
     }
+    getpost(postdata:object):Observable<Comment[]>{
+        return this.httpclient.post<Comment[]>("http://localhost:9143/api/products/",postdata)
+    }
 }

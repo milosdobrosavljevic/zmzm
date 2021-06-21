@@ -21,3 +21,11 @@
       <td><button id="delete" (click)="onclick1(com.id)" value="{{com.id}}">Delete</button></td>
     </tr>
 </table>
+
+<input type="text" #id value="id" />
+<input type="text" #name value="name" />
+<input type="text" #description value="description" />
+<input type="number" #price value="price" />
+<input type="number" #discount value="discount" />
+<input type="text" #type value="type" />
+<button (click)="onpost(id.value,name.value,description.value,price.value,discount.value,type.value)" id="postbutton">Post</button>
