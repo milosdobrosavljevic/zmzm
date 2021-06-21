@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { freeApiService } from './services/freeapi.service';
-import { Comments } from './classes/comments';
+import { Comment } from './classes/comments';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +8,18 @@ import { Comments } from './classes/comments';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private _freeapiservice:freeApiService){
-    
-   }
+  public stcomments: Comment[] = [];
+  constructor(private _freeapiservice: freeApiService) {
 
-  stcomments:Comments[]=[];
+  }
 
-  ngOnInit()
-  {
+  ngOnInit() {
     this._freeapiservice.getcomments()
-    .subscribe(
-      data=>
-      {
-        this.stcomments=data;
-      }
-    );
+      .subscribe(
+        (data) => {
+          this.stcomments = data;
+          console.log(this.stcomments);
+        }
+      );
   }
 }

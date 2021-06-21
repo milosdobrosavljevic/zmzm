@@ -1,11 +1,8 @@
-
-
-export class Comments
-{
-    id: string="";
-    name: string="";
-    description: string="";
-    price: number=0;
-    discount: number=0;
-    type: string="";
+export interface Comment {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    discount: number;
+    type: string;
 }
