@@ -9,23 +9,23 @@
     <th>type</th>
   </tr>
 
-    <tr *ngFor="let com of stcomments">
-      <td>{{com.id}}</td>
-      <td>{{com.name}}</td>
-      <td>{{com.description}}</td>
-      <td>{{com.price}}</td>
-      <td>{{com.discount}}</td>
-      <td>{{com.type}}</td>
-      <td><button id="view" value="{{com.id}}" >View</button></td>
-      <td><button id="edit" value="{{com.id}}">Edit</button></td>
-      <td><button id="delete" (click)="onclick1(com.id)" value="{{com.id}}">Delete</button></td>
-    </tr>
+  <tr *ngFor="let com of stcomments">
+    <td>{{com.id}}</td>
+    <td>{{com.name}}</td>
+    <td>{{com.description}}</td>
+    <td>{{com.price}}</td>
+    <td>{{com.discount}}</td>
+    <td>{{com.type}}</td>
+    <td><button id="view" value="{{com.id}}">View</button></td>
+    <td><button id="edit" value="{{com.id}}">Edit</button></td>
+    <td><button id="delete" (click)="onclick1(com.id)" value="{{com.id}}">Delete</button></td>
+  </tr>
 </table>
 
-<input type="text" #id value="id" />
-<input type="text" #name value="name" />
-<input type="text" #description value="description" />
-<input type="number" #price value="price" />
-<input type="number" #discount value="discount" />
-<input type="text" #type value="type" />
-<button (click)="onpost(id.value,name.value,description.value,price.value,discount.value,type.value)" id="postbutton">Post</button>
+<input type="text" #id />
+<input type="text" #name />
+<input type="text" #description />
+<input type="number" #price />
+<input type="number" #discount />
+<input type="text" #type />
+<button (click)="onpost(id.value, name.value, description.value, price.value, discount.value, type.value)" id="postbutton">Post</button>
